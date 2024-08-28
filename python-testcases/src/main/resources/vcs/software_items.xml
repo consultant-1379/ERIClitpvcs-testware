@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<litp:software-items-collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:litp="http://www.ericsson.com/litp" xsi:schemaLocation="http://www.ericsson.com/litp litp-xml-schema/litp.xsd" id="items">
+  <litp:package id="EXTR-lsbwrapper1">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper1<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper10">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper10<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper11">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper11<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper12">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper12<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper2">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper2<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper3">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper3<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper4">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper4<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper5">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper5<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper6">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper6<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper7">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper7<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper8">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper8<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper9">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper9<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+  <litp:package id="EXTR-lsbwrapper40">
+    <epoch>0</epoch>
+    <name>EXTR-lsbwrapper40<!--note: this property is not updatable--></name>
+    <version>1.1.0-1</version>
+  </litp:package>
+</litp:software-items-collection>

@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<litp:software-services-collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:litp="http://www.ericsson.com/litp" xsi:schemaLocation="http://www.ericsson.com/litp litp-xml-schema/litp.xsd" id="services">
+  <litp:service id="APP10">
+    <cleanup_command>/bin/touch /tmp/test-lsb-10.cleanup</cleanup_command>
+    <service_name>test-lsb-10</service_name>
+    <start_command>/usr/bin/systemctl start test-lsb-10</start_command>
+    <stop_command>/usr/bin/systemctl stop test-lsb-10</stop_command>
+    <litp:service-packages-collection id="packages">
+      <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper10" id="EXTR-lsbwrapper10"/>
+    </litp:service-packages-collection>
+  </litp:service>
+  <litp:service id="APP11">
+    <cleanup_command>/bin/touch /tmp/test-lsb-11.cleanup</cleanup_command>
+    <service_name>test-lsb-11</service_name>
+    <start_command>/usr/bin/systemctl start test-lsb-11</start_command>
+    <stop_command>/usr/bin/systemctl stop test-lsb-11</stop_command>
+    <litp:service-packages-collection id="packages">
+      <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper11" id="EXTR-lsbwrapper11"/>
+    </litp:service-packages-collection>
+  </litp:service>
+  <litp:service id="APP12">
+    <cleanup_command>/bin/touch /tmp/test-lsb-12.cleanup</cleanup_command>
+    <service_name>test-lsb-12</service_name>
+    <start_command>/usr/bin/systemctl start test-lsb-12</start_command>
+    <stop_command>/usr/bin/systemctl stop test-lsb-12</stop_command>
+    <litp:service-packages-collection id="packages">
+      <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper12" id="EXTR-lsbwrapper12"/>
+    </litp:service-packages-collection>
+  </litp:service>
+  <litp:service id="APP4">
+    <cleanup_command>/bin/touch /tmp/test-lsb-4.cleanup</cleanup_command>
+    <service_name>test-lsb-4</service_name>
+    <start_command>/usr/bin/systemctl start test-lsb-4</start_command>
+    <stop_command>/usr/bin/systemctl stop test-lsb-4</stop_command>
+    <litp:service-packages-collection id="packages">
+      <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper4" id="EXTR-lsbwrapper4"/>
+    </litp:service-packages-collection>
+  </litp:service>
+  <litp:service id="APP5">
+    <cleanup_command>/bin/touch /tmp/test-lsb-5.cleanup</cleanup_command>
+    <service_name>test-lsb-5</service_name>
+    <start_command>/usr/bin/systemctl start test-lsb-5</start_command>
+    <stop_command>/usr/bin/systemctl stop test-lsb-5</stop_command>
+    <litp:service-packages-collection id="packages">
+      <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper5" id="EXTR-lsbwrapper5"/>
+    </litp:service-packages-collection>
+  </litp:service>
+  <litp:service id="APP6">
+    <cleanup_command>/bin/touch /tmp/test-lsb-6.cleanup</cleanup_command>
+    <service_name>test-lsb-6</service_name>
+    <start_command>/usr/bin/systemctl start test-lsb-6</start_command>
+    <stop_command>/usr/bin/systemctl stop test-lsb-6</stop_command>
+    <litp:service-packages-collection id="packages">
+      <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper6" id="EXTR-lsbwrapper6"/>
+    </litp:service-packages-collection>
+  </litp:service>
+  <litp:service id="APP7">
+    <cleanup_command>/bin/touch /tmp/test-lsb-7.cleanup</cleanup_command>
+    <service_name>test-lsb-7</service_name>
+    <start_command>/usr/bin/systemctl start test-lsb-7</start_command>
+    <stop_command>/usr/bin/systemctl stop test-lsb-7</stop_command>
+    <litp:service-packages-collection id="packages">
+      <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper7" id="EXTR-lsbwrapper7"/>
+    </litp:service-packages-collection>
+  </litp:service>
+  <litp:service id="APP8">
+    <cleanup_command>/bin/touch /tmp/test-lsb-8.cleanup</cleanup_command>
+    <service_name>test-lsb-8</service_name>
+    <start_command>/usr/bin/systemctl start test-lsb-8</start_command>
+    <stop_command>/usr/bin/systemctl stop test-lsb-8</stop_command>
+    <litp:service-packages-collection id="packages">
+      <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper8" id="EXTR-lsbwrapper8"/>
+    </litp:service-packages-collection>
+  </litp:service>
+  <litp:service id="APP9">
+    <cleanup_command>/bin/touch /tmp/test-lsb-9.cleanup</cleanup_command>
+    <service_name>test-lsb-9</service_name>
+    <start_command>/usr/bin/systemctl start test-lsb-9</start_command>
+    <stop_command>/usr/bin/systemctl stop test-lsb-9</stop_command>
+    <litp:service-packages-collection id="packages">
+      <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper9" id="EXTR-lsbwrapper9"/>
+    </litp:service-packages-collection>
+  </litp:service>
+  <litp:service id="APP285704_long_service_name_for_vcs_regex_check_after_bug_fix_implementation">
+    <cleanup_command>/bin/touch /tmp/test-lsb-40.cleanup</cleanup_command>
+    <service_name>test-lsb-40</service_name>
+    <start_command>/usr/bin/systemctl start test-lsb-40</start_command>
+    <stop_command>/usr/bin/systemctl stop test-lsb-40</stop_command>
+    <litp:service-packages-collection id="packages">
+      <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper40" id="EXTR-lsbwrapper40"/>
+    </litp:service-packages-collection>
+  </litp:service>
+</litp:software-services-collection>

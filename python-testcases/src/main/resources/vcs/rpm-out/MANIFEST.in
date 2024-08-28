@@ -1,0 +1,6 @@
+  include *.txt *.pdf *.ini *.cfg SConstruct MANIFEST.in *.py
+  include doc/*.py doc/*.rst doc/*.tar.gz doc/*.bat doc/Makefile
+  recursive-include doc/user *.rst *.txt *.png
+  include example/*.py example/input/*.csv
+  recursive-include src *.py *.c *.h *.f SConscript
+  recursive-include test *.out *.rd *.in *.csv *.py

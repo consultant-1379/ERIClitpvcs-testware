@@ -1,0 +1,460 @@
+<?xml version='1.0' encoding='utf-8'?>
+<litp:cluster-services-collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:litp="http://www.ericsson.com/litp" xsi:schemaLocation="http://www.ericsson.com/litp litp-xml-schema/litp.xsd" id="services">
+  <litp:vcs-clustered-service id="CS1">
+    <active>1</active>
+    <name>CS1</name>
+    <node_list>n1,n2</node_list>
+    <standby>1</standby>
+    <litp:clustered-service-applications-collection id="applications"/>
+    <litp:clustered-service-ha_configs-collection id="ha_configs"/>
+    <litp:clustered-service-runtimes-collection id="runtimes">
+      <litp:lsb-runtime id="APP1">
+        <cleanup_command>/bin/true</cleanup_command>
+        <user>root</user>
+        <litp:runtime-entity-packages-collection id="packages">
+          <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper1" id="EXTR-lsbwrapper1"/>
+        </litp:runtime-entity-packages-collection>
+        <name>test-lsb-01</name>
+        <restart_limit>10</restart_limit>
+        <service_name>test-lsb-1</service_name>
+        <startup_retry_limit>10</startup_retry_limit>
+        <status_interval>20</status_interval>
+        <status_timeout>20</status_timeout>
+        <litp:lsb-runtime-filesystems-collection id="filesystems"/>
+        <litp:lsb-runtime-ipaddresses-collection id="ipaddresses">
+          <litp:vip id="ip1">
+            <ipaddress>172.16.100.130<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic1</network_name>
+          </litp:vip>
+          <litp:vip id="ip2">
+            <ipaddress>172.16.200.230<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic2</network_name>
+          </litp:vip>
+          <litp:vip id="ip3">
+            <ipaddress>172.16.200.231<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic2</network_name>
+          </litp:vip>
+          <litp:vip id="ip4">
+            <ipaddress>2001:2100:ef::2/64<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic1</network_name>
+          </litp:vip>
+          <litp:vip id="ip5">
+            <ipaddress>2001:2100:ef::3/64<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic1</network_name>
+          </litp:vip>
+          <litp:vip id="ip6">
+            <ipaddress>2001:2200:ef::1/64<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic2</network_name>
+          </litp:vip>
+        </litp:lsb-runtime-ipaddresses-collection>
+      </litp:lsb-runtime>
+    </litp:clustered-service-runtimes-collection>
+    <offline_timeout>300</offline_timeout>
+    <online_timeout>180</online_timeout>
+    <litp:vcs-clustered-service-filesystems-collection id="filesystems"/>
+    <litp:vcs-clustered-service-ipaddresses-collection id="ipaddresses"/>
+    <litp:vcs-clustered-service-triggers-collection id="triggers"/>
+  </litp:vcs-clustered-service>
+  <litp:vcs-clustered-service id="CS2">
+    <active>2</active>
+    <name>CS2</name>
+    <node_list>n1,n2</node_list>
+    <standby>0</standby>
+    <litp:clustered-service-applications-collection id="applications"/>
+    <litp:clustered-service-ha_configs-collection id="ha_configs"/>
+    <litp:clustered-service-runtimes-collection id="runtimes">
+      <litp:lsb-runtime id="APP2">
+        <cleanup_command>/bin/touch /tmp/test-lsb-2.cleanup</cleanup_command>
+        <start_command>/usr/bin/systemctl start test-lsb-2</start_command>
+        <stop_command>/usr/bin/systemctl stop test-lsb-2</stop_command>
+        <user>root</user>
+        <litp:runtime-entity-packages-collection id="packages">
+          <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper2" id="EXTR-lsbwrapper2"/>
+        </litp:runtime-entity-packages-collection>
+        <name>test-lsb-2</name>
+        <service_name>test-lsb-2</service_name>
+        <startup_retry_limit>10</startup_retry_limit>
+        <status_interval>20</status_interval>
+        <status_timeout>20</status_timeout>
+        <litp:lsb-runtime-filesystems-collection id="filesystems"/>
+        <litp:lsb-runtime-ipaddresses-collection id="ipaddresses">
+          <litp:vip id="ip1">
+            <ipaddress>172.16.200.240<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic2</network_name>
+          </litp:vip>
+          <litp:vip id="ip2">
+            <ipaddress>172.16.200.241<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic2</network_name>
+          </litp:vip>
+          <litp:vip id="ip3">
+            <ipaddress>172.16.200.242<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic2</network_name>
+          </litp:vip>
+          <litp:vip id="ip4">
+            <ipaddress>172.16.200.243<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic2</network_name>
+          </litp:vip>
+          <litp:vip id="ip5">
+            <ipaddress>172.16.100.240<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic1</network_name>
+          </litp:vip>
+          <litp:vip id="ip6">
+            <ipaddress>172.16.100.241<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic1</network_name>
+          </litp:vip>
+        </litp:lsb-runtime-ipaddresses-collection>
+      </litp:lsb-runtime>
+    </litp:clustered-service-runtimes-collection>
+    <offline_timeout>300</offline_timeout>
+    <online_timeout>300</online_timeout>
+    <litp:vcs-clustered-service-filesystems-collection id="filesystems"/>
+    <litp:vcs-clustered-service-ipaddresses-collection id="ipaddresses"/>
+    <litp:vcs-clustered-service-triggers-collection id="triggers"/>
+  </litp:vcs-clustered-service>
+  <litp:vcs-clustered-service id="CS3">
+    <active>1</active>
+    <name>CS3</name>
+    <node_list>n2</node_list>
+    <standby>0</standby>
+    <litp:clustered-service-applications-collection id="applications"/>
+    <litp:clustered-service-ha_configs-collection id="ha_configs"/>
+    <litp:clustered-service-runtimes-collection id="runtimes">
+      <litp:lsb-runtime id="APP3">
+        <cleanup_command>/bin/touch /tmp/test-lsb-3.cleanup</cleanup_command>
+        <start_command>/usr/bin/systemctl start test-lsb-3</start_command>
+        <stop_command>/usr/bin/systemctl stop test-lsb-3</stop_command>
+        <user>root</user>
+        <litp:runtime-entity-packages-collection id="packages">
+          <litp:package-inherit source_path="/software/items/EXTR-lsbwrapper3" id="EXTR-lsbwrapper3"/>
+        </litp:runtime-entity-packages-collection>
+        <name>test-lsb-3</name>
+        <restart_limit>10</restart_limit>
+        <service_name>test-lsb-3</service_name>
+        <startup_retry_limit>10</startup_retry_limit>
+        <status_interval>20</status_interval>
+        <status_timeout>20</status_timeout>
+        <litp:lsb-runtime-filesystems-collection id="filesystems"/>
+        <litp:lsb-runtime-ipaddresses-collection id="ipaddresses">
+          <litp:vip id="ip1">
+            <ipaddress>172.16.100.150<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic1</network_name>
+          </litp:vip>
+          <litp:vip id="ip2">
+            <ipaddress>172.16.100.151<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic1</network_name>
+          </litp:vip>
+          <litp:vip id="ip3">
+            <ipaddress>172.16.100.152<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic1</network_name>
+          </litp:vip>
+          <litp:vip id="ip4">
+            <ipaddress>172.16.200.250<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic2</network_name>
+          </litp:vip>
+          <litp:vip id="ip5">
+            <ipaddress>2001:2100:ef::6/64<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic1</network_name>
+          </litp:vip>
+          <litp:vip id="ip6">
+            <ipaddress>2001:2100:ef::9/64<!--note: this property is not updatable--></ipaddress>
+            <network_name>traffic1</network_name>
+          </litp:vip>
+        </litp:lsb-runtime-ipaddresses-collection>
+      </litp:lsb-runtime>
+    </litp:clustered-service-runtimes-collection>
+    <offline_timeout>300</offline_timeout>
+    <online_timeout>60</online_timeout>
+    <litp:vcs-clustered-service-filesystems-collection id="filesystems"/>
+    <litp:vcs-clustered-service-ipaddresses-collection id="ipaddresses"/>
+    <litp:vcs-clustered-service-triggers-collection id="triggers"/>
+  </litp:vcs-clustered-service>
+  <litp:vcs-clustered-service id="CS4">
+    <active>1</active>
+    <name>CS4</name>
+    <node_list>n1,n2</node_list>
+    <standby>1</standby>
+    <litp:clustered-service-applications-collection id="applications">
+      <litp:service-inherit source_path="/software/services/APP4" id="APP4">
+        <litp:service-packages-collection-inherit source_path="/software/services/APP4/packages" id="packages">
+          <litp:package-inherit source_path="/software/services/APP4/packages/EXTR-lsbwrapper4" id="EXTR-lsbwrapper4"/>
+        </litp:service-packages-collection-inherit>
+      </litp:service-inherit>
+      <litp:service-inherit source_path="/software/services/APP9" id="APP9">
+        <litp:service-packages-collection-inherit source_path="/software/services/APP9/packages" id="packages">
+          <litp:package-inherit source_path="/software/services/APP9/packages/EXTR-lsbwrapper9" id="EXTR-lsbwrapper9"/>
+        </litp:service-packages-collection-inherit>
+      </litp:service-inherit>
+    </litp:clustered-service-applications-collection>
+    <litp:clustered-service-ha_configs-collection id="ha_configs">
+      <litp:ha-service-config id="APP4_config">
+        <status_timeout>18</status_timeout>
+        <clean_timeout>60</clean_timeout>
+        <fault_on_monitor_timeouts>4</fault_on_monitor_timeouts>
+        <service_id>APP4<!--note: this property is not updatable--></service_id>
+        <tolerance_limit>0</tolerance_limit>
+      </litp:ha-service-config>
+      <litp:ha-service-config id="APP9_config">
+        <status_timeout>18</status_timeout>
+        <clean_timeout>60</clean_timeout>
+        <fault_on_monitor_timeouts>4</fault_on_monitor_timeouts>
+        <service_id>APP9<!--note: this property is not updatable--></service_id>
+        <tolerance_limit>0</tolerance_limit>
+      </litp:ha-service-config>
+    </litp:clustered-service-ha_configs-collection>
+    <litp:clustered-service-runtimes-collection id="runtimes"/>
+    <offline_timeout>300</offline_timeout>
+    <online_timeout>180</online_timeout>
+    <litp:vcs-clustered-service-filesystems-collection id="filesystems"/>
+    <litp:vcs-clustered-service-ipaddresses-collection id="ipaddresses"/>
+    <litp:vcs-clustered-service-triggers-collection id="triggers"/>
+  </litp:vcs-clustered-service>
+  <litp:vcs-clustered-service id="CS5">
+    <active>2</active>
+    <name>CS5</name>
+    <node_list>n1,n2</node_list>
+    <standby>0</standby>
+    <litp:clustered-service-applications-collection id="applications">
+      <litp:service-inherit source_path="/software/services/APP5" id="APP5">
+        <litp:service-packages-collection-inherit source_path="/software/services/APP5/packages" id="packages">
+          <litp:package-inherit source_path="/software/services/APP5/packages/EXTR-lsbwrapper5" id="EXTR-lsbwrapper5"/>
+        </litp:service-packages-collection-inherit>
+      </litp:service-inherit>
+    </litp:clustered-service-applications-collection>
+    <litp:clustered-service-ha_configs-collection id="ha_configs"/>
+    <litp:clustered-service-runtimes-collection id="runtimes"/>
+    <offline_timeout>300</offline_timeout>
+    <online_timeout>120</online_timeout>
+    <litp:vcs-clustered-service-filesystems-collection id="filesystems"/>
+    <litp:vcs-clustered-service-ipaddresses-collection id="ipaddresses"/>
+    <litp:vcs-clustered-service-triggers-collection id="triggers"/>
+  </litp:vcs-clustered-service>
+  <litp:vcs-clustered-service id="CS6">
+    <active>1</active>
+    <dependency_list>CS3,CS4</dependency_list>
+    <name>CS6</name>
+    <node_list>n2</node_list>
+    <standby>0</standby>
+    <litp:clustered-service-applications-collection id="applications">
+      <litp:service-inherit source_path="/software/services/APP6" id="APP6">
+        <litp:service-packages-collection-inherit source_path="/software/services/APP6/packages" id="packages">
+          <litp:package-inherit source_path="/software/services/APP6/packages/EXTR-lsbwrapper6" id="EXTR-lsbwrapper6"/>
+        </litp:service-packages-collection-inherit>
+      </litp:service-inherit>
+      <litp:service-inherit source_path="/software/services/APP8" id="APP8">
+        <litp:service-packages-collection-inherit source_path="/software/services/APP8/packages" id="packages">
+          <litp:package-inherit source_path="/software/services/APP8/packages/EXTR-lsbwrapper8" id="EXTR-lsbwrapper8"/>
+        </litp:service-packages-collection-inherit>
+      </litp:service-inherit>
+    </litp:clustered-service-applications-collection>
+    <litp:clustered-service-ha_configs-collection id="ha_configs">
+      <litp:ha-service-config id="APP6_config">
+        <status_timeout>18</status_timeout>
+        <clean_timeout>60</clean_timeout>
+        <fault_on_monitor_timeouts>4</fault_on_monitor_timeouts>
+        <restart_limit>10</restart_limit>
+        <service_id>APP6<!--note: this property is not updatable--></service_id>
+        <startup_retry_limit>10</startup_retry_limit>
+        <tolerance_limit>0</tolerance_limit>
+      </litp:ha-service-config>
+      <litp:ha-service-config id="APP8_config">
+        <status_timeout>18</status_timeout>
+        <clean_timeout>60</clean_timeout>
+        <fault_on_monitor_timeouts>4</fault_on_monitor_timeouts>
+        <restart_limit>10</restart_limit>
+        <service_id>APP8<!--note: this property is not updatable--></service_id>
+        <startup_retry_limit>10</startup_retry_limit>
+        <tolerance_limit>0</tolerance_limit>
+      </litp:ha-service-config>
+    </litp:clustered-service-ha_configs-collection>
+    <litp:clustered-service-runtimes-collection id="runtimes"/>
+    <offline_timeout>300</offline_timeout>
+    <online_timeout>60</online_timeout>
+    <litp:vcs-clustered-service-filesystems-collection id="filesystems"/>
+    <litp:vcs-clustered-service-ipaddresses-collection id="ipaddresses">
+      <litp:vip id="ip1">
+        <ipaddress>172.16.100.185<!--note: this property is not updatable--></ipaddress>
+        <network_name>traffic1</network_name>
+      </litp:vip>
+      <litp:vip id="ip2">
+        <ipaddress>172.16.100.186<!--note: this property is not updatable--></ipaddress>
+        <network_name>traffic1</network_name>
+      </litp:vip>
+    </litp:vcs-clustered-service-ipaddresses-collection>
+    <litp:vcs-clustered-service-triggers-collection id="triggers"/>
+  </litp:vcs-clustered-service>
+  <litp:vcs-clustered-service id="CS7">
+    <active>2</active>
+    <name>CS7</name>
+    <node_list>n1,n2</node_list>
+    <standby>0</standby>
+    <litp:clustered-service-applications-collection id="applications">
+      <litp:service-inherit source_path="/software/services/APP7" id="APP7">
+        <litp:service-packages-collection-inherit source_path="/software/services/APP7/packages" id="packages">
+          <litp:package-inherit source_path="/software/services/APP7/packages/EXTR-lsbwrapper7" id="EXTR-lsbwrapper7"/>
+        </litp:service-packages-collection-inherit>
+      </litp:service-inherit>
+    </litp:clustered-service-applications-collection>
+    <litp:clustered-service-ha_configs-collection id="ha_configs">
+      <litp:ha-service-config id="service_config">
+        <status_interval>18</status_interval>
+        <status_timeout>17</status_timeout>
+        <clean_timeout>60</clean_timeout>
+        <fault_on_monitor_timeouts>4</fault_on_monitor_timeouts>
+        <restart_limit>16</restart_limit>
+        <startup_retry_limit>15</startup_retry_limit>
+        <tolerance_limit>0</tolerance_limit>
+      </litp:ha-service-config>
+    </litp:clustered-service-ha_configs-collection>
+    <litp:clustered-service-runtimes-collection id="runtimes"/>
+    <offline_timeout>300</offline_timeout>
+    <online_timeout>60</online_timeout>
+    <litp:vcs-clustered-service-filesystems-collection id="filesystems"/>
+    <litp:vcs-clustered-service-ipaddresses-collection id="ipaddresses">
+      <litp:vip id="ip1">
+        <ipaddress>2001:abcd:ef::14/64<!--note: this property is not updatable--></ipaddress>
+        <network_name>traffic2</network_name>
+      </litp:vip>
+      <litp:vip id="ip2">
+        <ipaddress>2001:abcd:ef::15/64<!--note: this property is not updatable--></ipaddress>
+        <network_name>traffic2</network_name>
+      </litp:vip>
+    </litp:vcs-clustered-service-ipaddresses-collection>
+    <litp:vcs-clustered-service-triggers-collection id="triggers"/>
+  </litp:vcs-clustered-service>
+  <litp:vcs-clustered-service id="CS8">
+    <active>1</active>
+    <name>CS8</name>
+    <node_list>n1,n2</node_list>
+    <standby>1</standby>
+    <litp:clustered-service-applications-collection id="applications">
+      <litp:service-inherit source_path="/software/services/APP10" id="APP10">
+        <litp:service-packages-collection-inherit source_path="/software/services/APP10/packages" id="packages">
+          <litp:package-inherit source_path="/software/services/APP10/packages/EXTR-lsbwrapper10" id="EXTR-lsbwrapper10"/>
+        </litp:service-packages-collection-inherit>
+      </litp:service-inherit>
+    </litp:clustered-service-applications-collection>
+    <litp:clustered-service-ha_configs-collection id="ha_configs">
+      <litp:ha-service-config id="service_config">
+        <status_interval>25</status_interval>
+        <status_timeout>20</status_timeout>
+        <clean_timeout>60</clean_timeout>
+        <fault_on_monitor_timeouts>4</fault_on_monitor_timeouts>
+        <restart_limit>5</restart_limit>
+        <startup_retry_limit>6</startup_retry_limit>
+        <tolerance_limit>0</tolerance_limit>
+      </litp:ha-service-config>
+    </litp:clustered-service-ha_configs-collection>
+    <litp:clustered-service-runtimes-collection id="runtimes"/>
+    <offline_timeout>300</offline_timeout>
+    <online_timeout>30</online_timeout>
+    <litp:vcs-clustered-service-filesystems-collection id="filesystems"/>
+    <litp:vcs-clustered-service-ipaddresses-collection id="ipaddresses">
+      <litp:vip id="ip1">
+        <ipaddress>2001:2200:ef::12/64<!--note: this property is not updatable--></ipaddress>
+        <network_name>traffic2</network_name>
+      </litp:vip>
+      <litp:vip id="ip2">
+        <ipaddress>2001:2200:ef::13/64<!--note: this property is not updatable--></ipaddress>
+        <network_name>traffic2</network_name>
+      </litp:vip>
+    </litp:vcs-clustered-service-ipaddresses-collection>
+    <litp:vcs-clustered-service-triggers-collection id="triggers"/>
+  </litp:vcs-clustered-service>
+  <litp:vcs-clustered-service id="CS9">
+    <active>1</active>
+    <dependency_list>CS10</dependency_list>
+    <name>CS9</name>
+    <node_list>n1</node_list>
+    <standby>0</standby>
+    <litp:clustered-service-applications-collection id="applications">
+      <litp:service-inherit source_path="/software/services/APP11" id="APP11">
+        <litp:service-packages-collection-inherit source_path="/software/services/APP11/packages" id="packages">
+          <litp:package-inherit source_path="/software/services/APP11/packages/EXTR-lsbwrapper11" id="EXTR-lsbwrapper11"/>
+        </litp:service-packages-collection-inherit>
+      </litp:service-inherit>
+    </litp:clustered-service-applications-collection>
+    <litp:clustered-service-ha_configs-collection id="ha_configs">
+      <litp:ha-service-config id="service_config">
+        <clean_timeout>60</clean_timeout>
+        <fault_on_monitor_timeouts>4</fault_on_monitor_timeouts>
+        <tolerance_limit>0</tolerance_limit>
+      </litp:ha-service-config>
+    </litp:clustered-service-ha_configs-collection>
+    <litp:clustered-service-runtimes-collection id="runtimes"/>
+    <offline_timeout>300</offline_timeout>
+    <online_timeout>300</online_timeout>
+    <litp:vcs-clustered-service-filesystems-collection id="filesystems"/>
+    <litp:vcs-clustered-service-ipaddresses-collection id="ipaddresses"/>
+    <litp:vcs-clustered-service-triggers-collection id="triggers"/>
+  </litp:vcs-clustered-service>
+  <litp:vcs-clustered-service id="CS10">
+    <active>1</active>
+    <name>CS10</name>
+    <node_list>n1</node_list>
+    <standby>0</standby>
+    <litp:clustered-service-applications-collection id="applications">
+      <litp:service-inherit source_path="/software/services/APP12" id="APP12">
+        <litp:service-packages-collection-inherit source_path="/software/services/APP12/packages" id="packages">
+          <litp:package-inherit source_path="/software/services/APP12/packages/EXTR-lsbwrapper12" id="EXTR-lsbwrapper12"/>
+        </litp:service-packages-collection-inherit>
+      </litp:service-inherit>
+    </litp:clustered-service-applications-collection>
+    <litp:clustered-service-ha_configs-collection id="ha_configs">
+      <litp:ha-service-config id="service_config">
+        <clean_timeout>60</clean_timeout>
+        <fault_on_monitor_timeouts>4</fault_on_monitor_timeouts>
+        <tolerance_limit>0</tolerance_limit>
+      </litp:ha-service-config>
+    </litp:clustered-service-ha_configs-collection>
+    <litp:clustered-service-runtimes-collection id="runtimes"/>
+    <offline_timeout>300</offline_timeout>
+    <online_timeout>300</online_timeout>
+    <litp:vcs-clustered-service-filesystems-collection id="filesystems"/>
+    <litp:vcs-clustered-service-ipaddresses-collection id="ipaddresses">
+      <litp:vip id="ip1">
+        <ipaddress>2001:1100:82a1:0103:5167::20/64<!--note: this property is not updatable--></ipaddress>
+        <network_name>traffic1</network_name>
+      </litp:vip>
+      <litp:vip id="ip2">
+        <ipaddress>2001:1200:82a1:0103:5167::21/64<!--note: this property is not updatable--></ipaddress>
+        <network_name>traffic2</network_name>
+      </litp:vip>
+    </litp:vcs-clustered-service-ipaddresses-collection>
+    <litp:vcs-clustered-service-triggers-collection id="triggers"/>
+  </litp:vcs-clustered-service>
+  <litp:vcs-clustered-service id="CS245704">
+    <active>1</active>
+    <name>CS245704</name>
+    <node_list>n1</node_list>
+    <standby>0</standby>
+    <litp:clustered-service-applications-collection id="applications">
+      <litp:service-inherit source_path="/software/services/APP285704_long_service_name_for_vcs_regex_check_after_bug_fix_implementation" id="APP285704_long_service_name_for_vcs_regex_check_after_bug_fix_implementation">
+        <litp:service-packages-collection-inherit source_path="/software/services/APP285704_long_service_name_for_vcs_regex_check_after_bug_fix_implementation/packages" id="packages">
+          <litp:package-inherit source_path="/software/services/APP285704_long_service_name_for_vcs_regex_check_after_bug_fix_implementation/packages/EXTR-lsbwrapper40" id="EXTR-lsbwrapper40"/>
+        </litp:service-packages-collection-inherit>
+      </litp:service-inherit>
+    </litp:clustered-service-applications-collection>
+    <litp:clustered-service-ha_configs-collection id="ha_configs">
+      <litp:ha-service-config id="service_config">
+        <clean_timeout>60</clean_timeout>
+        <fault_on_monitor_timeouts>4</fault_on_monitor_timeouts>
+        <tolerance_limit>0</tolerance_limit>
+      </litp:ha-service-config>
+    </litp:clustered-service-ha_configs-collection>
+    <litp:clustered-service-runtimes-collection id="runtimes"/>
+    <offline_timeout>300</offline_timeout>
+    <online_timeout>300</online_timeout>
+    <litp:vcs-clustered-service-filesystems-collection id="filesystems"/>
+    <litp:vcs-clustered-service-ipaddresses-collection id="ipaddresses">
+      <litp:vip id="ip1">
+        <ipaddress>2001:1100:82a1:0103:5167::23/64<!--note: this property is not updatable--></ipaddress>
+        <network_name>traffic1</network_name>
+      </litp:vip>
+      <litp:vip id="ip2">
+        <ipaddress>2001:1200:82a1:0103:5167::24/64<!--note: this property is not updatable--></ipaddress>
+        <network_name>traffic2</network_name>
+      </litp:vip>
+    </litp:vcs-clustered-service-ipaddresses-collection>
+    <litp:vcs-clustered-service-triggers-collection id="triggers"/>
+  </litp:vcs-clustered-service>
+</litp:cluster-services-collection>

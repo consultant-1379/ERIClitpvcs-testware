@@ -1,0 +1,37 @@
+#!/usr/bin/env python
+
+import sys
+import time
+from daemonise import Daemonizer
+import urllib2
+
+
+class VCS_Availablity(object):
+    def __init__(self, url, repeat=-1, fpath="/root/Story_out"):
+        self._url = url
+        self._repeat = repeat
+        self._fpath = fpath
+
+    def run(self):
+        with open(self._fpath, "a") as f:
+            i = 0
+            # -1 is infinite
+            while i != self._repeat:
+                i += 1
+                try:
+                    connection = urllib2.urlopen(self._url)
+                    connection.close()
+                except:
+                    # We dont really care what happens here
+                    pass
+                time.sleep(1)
+
+if __name__ == "__main__":
+    s = VCS_Availablity(url="http://ms1:8000/root",
+                        fpath="/root/Story_out",
+                        repeat=-1)
+    daemon = Daemonizer(s.run, "/var/run/{{ script }}")
+    action = ""
+    if len(sys.argv) > 1:
+        action = sys.argv[1]
+    sys.exit(daemon.perform_action(action))

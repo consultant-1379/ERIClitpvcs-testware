@@ -1,0 +1,12 @@
+[Unit]
+Description=
+After=
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/{{ script }} start
+ExecStop=/usr/bin/{{ script }} stop
+
+[Install]
+WantedBy=

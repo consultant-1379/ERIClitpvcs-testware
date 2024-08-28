@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+
+# Copyright (C) 2012 Martin Helm <martin@mhelm.de>
+#
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 3 of the License, or (at your option) any later
+# version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+# details.
+#
+# You can get a copy of the GNU General Public License at
+# <http://www.gnu.org/licenses/>.
+
+from distutils.core import setup
+from fnmatch import fnmatch
+import os
+
+
+def listfiles(*dirs):
+    dir, pattern = os.path.split(os.path.join(*dirs))
+    return [os.path.join(dir, filename)
+            for filename in os.listdir(os.path.abspath(dir))
+            if filename[0] != '.' and fnmatch(filename, pattern)]
+
+setup(
+    name             = '{{ name }}',
+    version          = '{{ version }}',
+    description      = 'VCS test rpm',
+    long_description = "Reads all available information for access points which are visible for a given wlan device on a Linux machine and plots the power spectrum to assist choosing the optimal channel for your own access point.",
+    author           = 'Martin Helm <martin_helm>',
+    author_email     = 'martin@mhelm.de',
+    url              = 'http://code.google.com/p/wifiplotter/',
+    platforms        = 'linux',
+    license          = 'GPL-3.0',
+    scripts          = ['{{ script }}', '{{ service_unit }}'],
+    data_files       = [('/usr/bin/', ['{{ script }}']), ('/usr/lib/systemd/system/', ['{{ service_unit }}'])],
+)
